@@ -1,0 +1,20 @@
+class Solution {
+public:
+    
+int removeDuplicates(vector<int>& numbers) {
+    set<int> uniqueNumbers;
+
+    
+    for (int i = 0; i < numbers.size(); i++) {
+        uniqueNumbers.insert(numbers[i]);
+    }
+
+    
+    numbers.clear();
+    for (auto it : uniqueNumbers) {
+        numbers.push_back(it);
+    }
+
+    return uniqueNumbers.size();
+}
+};
