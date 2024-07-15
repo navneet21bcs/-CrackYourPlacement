@@ -1,3 +1,4 @@
+// better soln->O(n^2)
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
