@@ -42,3 +42,29 @@ int subarraysDivByK(vector<int>& nums, int k) {
         return res;
     }
 };
+//Optimal soln in O(n)
+class Solution {
+public:
+    int subarraysDivByK(vector<int>& nums, int k) {
+        int n=nums.size();
+        unordered_map<int,int>mp;
+        int sum=0;
+        int res=0;
+        mp[0]=1;
+        for(int i=0;i<n;i++)
+        {
+            sum=sum+nums[i];
+            int rem=sum%k;
+            if(rem<0)
+            {
+                rem=rem+k;
+            }
+            if(mp.find(rem)!=mp.end())
+            {
+                res=res+mp[rem];
+            }
+            mp[rem]++;
+        }
+        return res;
+    }
+};
